@@ -352,7 +352,7 @@ extensions += [
 ]
 
 slide_title = 'Code Review for Operations'
-slide_theme = 'slides2'
+slide_theme = 'slides'
 slide_levels = 3
 
 # Place custom static assets in the _static directory and uncomment
