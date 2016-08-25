@@ -243,6 +243,23 @@ The Game
     If the only way to get code into the repository is to get it approved by other people, certain things emerge from that, which then influence behavior.
 
 
+Why do People Do Code Review
+============================
+
+
+* Fewer defects
+* Developers share knowlege, responsibility
+* Limits the impact of a 'Brent'
+* Brings up the other developers
+* Creates Audit trail
+* Encourages 'tests always passing'
+
+
+.. note::
+    * encourages in two ways: 
+      1) the test passing is looked at, no more push-thrashing
+      2) no one wants to waste other peolpes time, they feel bad
+
 
 
 References
