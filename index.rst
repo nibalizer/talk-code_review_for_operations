@@ -236,7 +236,7 @@ The Game
 * People will learn who the soft touches are, and hassle them
 * Lots of time spent reviewing = less patches
 * Sprinting + Review workflow = hard
-
+* Chat + Review = odd
 
 .. note:: 
 
@@ -259,7 +259,52 @@ Why do People Do Code Review
     * encourages in two ways: 
       1) the test passing is looked at, no more push-thrashing
       2) no one wants to waste other peolpes time, they feel bad
+    * the logo for DoD boston is throwing away ego, blame, and slios
+    * silos because people can see changes other teams are doing in code review and git history, and positively push or nack those changes
+    * blame because whatever was done was done by 2 or 3 team members, no one solo action can cause an outage
+    * ego because people will find bugs in your code and point it out, and it very quickly becomes a non issue to take and get that kind of feedback
 
+
+.. this is where, if I had my shit together, we would talk about acadmeic research into code review
+
+
+Infrastructure as Code
+======================
+
+
+.. code-block:: shell
+
+    Infrastructure as Code is the process of managing and provisioning
+    computing infrastructure (processes, bare-metal servers, virtual
+    servers, etc.) and their configuration through machine-processable
+    definition files, rather than physical hardware configuration or the
+    use of interactive configuration tools. The definition files may be
+    in a version control system.
+
+Wikipedia
+
+
+Infrastructure as Code
+======================
+
+
+.. code-block:: shell
+
+    Use the git, luke
+
+Infrastructure as Code
+======================
+
+
+.. code-block:: shell
+
+    Describe your infrastructure with code, track it in git, modify it
+    using code review.
+
+
+.. note::
+
+    Joe Damato's talk 'infrastructure as code might be literally impossible'
 
 
 References
