@@ -34,8 +34,8 @@ Portland
 .. CC BY-SA https://upload.wikimedia.org/wikipedia/commons/f/fa/Portland_and_Mt_Hood.jpg
 
 
-Portland
-========
+Real Portland
+=============
 
 .. figure:: _static/afterthebigone.gif
    :align: center
@@ -44,15 +44,14 @@ Portland
 .. Fair Use Motherboard/Vice
 
 
-Portland
-========
+Things I am Involved In
+=======================
 
-.. figure:: _static/superbugs.png
-   :align: center
-
-
-.. Do i need to be fancy with this?
-
+* OpenStack
+* DevOpsDays PDX
+* SeaGL
+* Open Infrastructure Day @ SCaLE
+* VoxPupuli
 
 Me
 ==
@@ -60,8 +59,14 @@ Me
 * Portland State University
 * Large Trucking Company
 * OpenStack Infrastructure Project
-* Large Company That Used To Do Printers
+* Very Large Company That Used To Do Printers Then Split In Two
 * IBM
+
+
+.. note::
+
+   I've done some kind of code review at every place I've ever worked
+
 
 OpenStack Code Fast Facts
 =========================
@@ -72,6 +77,18 @@ OpenStack Code Fast Facts
 
 .. note::
     * openstack development is freaking huge
+    * I work on the testing system
+    * Infrastructure admin, release team
+
+Vocab
+=====
+
+* Review(noun): A proposed change
+* Change(noun): A proposed change
+* Robot(noun): Some kind of automated process
+* Review(verb): A human or robot vote on a change
+* Land(verb): A proposed change merging with mainline
+
 
 Code Review
 ===========
@@ -142,6 +159,7 @@ Code Review
    * avec robots
 
 
+
 Tools and techniques
 ====================
 
@@ -191,6 +209,11 @@ Tools:
    * Who can rerun the tests
    * Who can block the commit from landing
    * Who can update the commit
+
+   Interaction with other changes
+
+   * Multiple changes can stack 
+   * Stack changes against changes proposed to other repositories
 
 
 Tools and Techniques
@@ -267,6 +290,15 @@ Why do People Do Code Review
 
 .. this is where, if I had my shit together, we would talk about acadmeic research into code review
 
+SuperBugs
+=========
+
+.. figure:: _static/superbugs.png
+   :align: center
+
+
+.. Do i need to be fancy with this?
+
 
 Infrastructure as Code
 ======================
@@ -299,12 +331,242 @@ Infrastructure as Code
 .. code-block:: shell
 
     Describe your infrastructure with code, track it in git, modify it
-    using code review.
+    using code review, deploy it with robots.
 
 
 .. note::
 
     Joe Damato's talk 'infrastructure as code might be literally impossible'
+
+Infrastructure as Code
+======================
+
+Techniques and Technologies
+
+
+.. note::
+
+   You don't need me to tell you how to do this. There are a million vendors here with solutions for you.
+   I use a lot of puppet and ansible. I do some image building as well. Do what works.
+   Many people are doing this for not the first time. It's not super great but it works.
+   Many of us are also moving to a situation where we abdicate responsibility in a lot of ways and instead spend our time taking care of a scheduler.
+   That's not bad, network engineers have been there for a long time, so have people who are responsible for caching and cdn work.
+
+
+Code Review for Operations
+==========================
+
+How does code review change when done to an IoC codebase?
+
+
+Things we use code review for
+=============================
+
+.. rst-class:: build
+
+* Changes to daemons
+* Configuration of daemons
+* Changing users on servers
+* Changing packages, files, services
+* Changes to our image builds
+* Changing security groups on a cloud
+* Docs
+* New servers
+
+
+Things we use code review for
+=============================
+
+.. rst-class:: build
+
+* Test definitons
+* Creating Git repositories
+* Registering irc channels
+* Mapping 'review created' events to irc channels
+* ACLs for git
+* Specifications for future work
+
+Things we use code review for
+=============================
+
+.. rst-class:: build
+
+* Candidate positions for elected officials
+* Mapping between repositories and jobs
+* Releases
+* Adding new dependencies
+* Grafana dashboards
+* Meeting calendar
+
+.. note::
+
+   It becomes a lifestyle of reviewing yaml, all day.
+   Some of it is minorly important, some of it is hugely important
+   A one line config for ops can be exhausting
+
+   With all of these things, multiple eyes adds value, but it costs time
+   In some cases we just have rubber stamping 'yep looks good'
+
+   Some of this is really going too far and the bikeshed is painted all the
+   colors of the rainbow
+
+
+Code Review for Operations
+==========================
+
+.. rst-class:: build
+
+How does code review change when done to an IoC codebase?
+
+* Merge speed is an issue
+* Auditablity becomes huge
+* Access control moves from unix to your vcs
+* Testing will have less coverage
+* Small changes can have huge impact -> stressful
+* Many approve -> consensus
+
+
+.. note::
+
+    When shits on fire, we might need to self approve or approve without tests, its the reality
+
+    We prefer to use the system improperly to just going rouge and rooting.
+
+    Spencer Krum Correlarry to Damato's rule: testing infrastructure changes might be litterally impossible
+
+    One line yaml changes can be really scary to approve, for a software dev its like changing the defaults of software, just every day, all day
+
+    What are some of the emergent behaviors?
+
+The Game
+========
+
+* Reviews in OpenStack are tracked by robots
+
+
+.. note::
+
+   Your # of reviews, % of -1 to +2 score, those things are metrics attached to your name. Some people and orgs care about these numbers more than others.
+
+   If you have only positive votes, it looks like you don't really review code that closely and are just rubber stamping not reviewing.
+
+   This creates a secondary effect where people look for any old thing to -1 with, which creates frustration in people trying to just get shit fixed
+
+The Game
+========
+
+* 1st Person YOLO
+* 2nd Person YOLO
+
+.. note::
+
+    With any 2 person approval proccess this is true, but it is particularly difficult in IoC environments
+
+    1st person can kinda just be like 'sure, looks good' then the second person is the one who is really on the hook for verifying the code before it goes.
+    1st person isn't really required to do a deep review, 2nd person is disincentivized from approving second because blowback sorta falls on them
+
+    The opposite can also be true. That second person can be like 'well the author wrote it and the first reviewer liked it so its probably good and WHAM'
+
+    Imagine for a second how bad it can be when these two people meet on a review.
+
+
+Chickens and Pigs
+=================
+
+* Code review for IoC enables Chickens to help
+
+.. note::
+
+    One of the reasons cited for dropping the C&P analogy was it didn't leave room for the knowlegeable expert.
+
+    Having an outside expert propose a patch or review a patch can be extremely useful
+
+    Note that they can have laser focus, so remember that the pigs role is still to take the wide view
+
+    We had our gerrit expert propose a change and we approved it like 'sure buddy', then found out we'd opened up a security vulnerability
+
+
+Other Teams
+===========
+
+* Reviews let other teams see what you are up to
+
+.. note::
+
+    Kanban boards are great
+
+    Code reviews can also exist as ways for other teams to see what you're up to
+    "oh this is failing tests"
+    "that's gonna change a lot of servers"
+
+
+WIP Changes
+===========
+
+* Changes can be proposed before they are complete
+
+.. note::
+
+    This allows you to get early feedback.
+    This allows you to go on vacation and somone else can pick it up
+
+
+Silence Means No
+================
+
+* Consciously skipping over a review is a different kind of -1
+
+.. note::
+
+    Giving a -1 review might be what someone is thinking. But the belief that there are bugs in the thing, or the general
+    desire not to have that change in the repository will sometimes be realized as someone just refusing to review a
+    change.
+
+    "The direction here is wrong"
+    "I don't have time to do it right now but we need to that right"
+
+
+Forcing the Issue
+=================
+
+* Proposing an agressive change can force the issue
+
+.. note::
+
+    For whatever reason, the team is not agreed on a solution, and pressure is on. One individual or faction wants to
+    wait and think, or come up with something elegant. Another wants to quick n dirty.
+
+    The Q&D team can propose that change, then threaten to merge it themselves, or have managers escalate and try to get
+    you to do it, or whatever. The point is whomever is resistant to action may be forced to push back hard.
+
+    This can work to your advantage if you're dealing with people who are giving you the 'ignore'.
+
+
+What's next for code review
+===========================
+
+* Full server create/delete
+* Finglonger
+
+
+Finglonger Demo
+===============
+
+* If there is time
+
+
+Thank You & Questions
+=====================
+
+.. figure:: _static/devopsdays_boston_logo.png
+   :align: left
+   :width: 300px
+
+Spencer Krum, IBM
+
+August 26th, 2016
+
+@nibalizer
 
 
 References
@@ -315,3 +577,19 @@ References
 * Apply test: http://git.openstack.org/cgit/openstack-infra/system-config/tree/tools/apply-test.sh
 * OpenStack CI http://docs.openstack.org/infra/openstackci/
 * OpenStack Stats: http://stackalytics.com
+
+References
+==========
+
+* OpenStack yaml driven grafana: http://grafana.openstack.org/dashboard/db/nodepool-infra-cloud
+* Yaml -> grafana tool: https://git.openstack.org/cgit/openstack-infra/grafyaml/
+* Adding a Meeting in code review: https://review.openstack.org/#/c/343871/
+* Elections in git: https://github.com/voxpupuli/plumbing/blob/master/share/elections/2016-01.md
+* Yaml for everything: https://git.openstack.org/cgit/openstack-infra/project-config
+
+References
+==========
+
+* Finglonger: https://github.com/nibalizer/finglonger
+* This talk: https://github.com/nibalizer/talk-code_review_for_operations
+
