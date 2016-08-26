@@ -287,9 +287,7 @@ Things we use code review for
 * Changing users on servers
 * Changing packages, files, services
 * Changes to our image builds
-* Changing security groups on a cloud
 * Docs
-* New servers
 
 
 Things we use code review for
@@ -299,9 +297,9 @@ Things we use code review for
 
 * Test definitions
 * Creating Git repositories
+* ACLs for git
 * Registering irc channels
 * Mapping 'review created' events to irc channels
-* ACLs for git
 * Specifications for future work
 
 Things we use code review for
@@ -408,20 +406,6 @@ Chickens and Pigs
     We had our gerrit expert propose a change and we approved it like 'sure buddy', then found out we'd opened up a security vulnerability
 
 
-Other Teams
-===========
-
-* Reviews let other teams see what you are up to
-
-.. note::
-
-    Kanban boards are great
-
-    Code reviews can also exist as ways for other teams to see what you're up to
-    "oh this is failing tests"
-    "that's gonna change a lot of servers"
-
-
 WIP Changes
 ===========
 
@@ -474,7 +458,10 @@ What's next for code review
 Finglonger Demo
 ===============
 
-* If there is time
+.. figure:: _static/futurama_finglonger.jpg
+   :align: center
+
+Fair Use: Fox
 
 
 Thank You & Questions
