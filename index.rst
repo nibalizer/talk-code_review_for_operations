@@ -78,8 +78,8 @@ OpenStack Code Fast Facts
 Vocab
 =====
 
-* Review(noun): A proposed change
-* Change(noun): A proposed change
+* Review(noun): A proposed code change
+* Change(noun): A proposed code change
 * Robot(noun): Some kind of automated process
 * Review(verb): A human or robot vote on a change
 * Land(verb): A proposed change merging with mainline
@@ -113,6 +113,41 @@ Code Review
 
    * sans robots
    * add in robots to test and deploy
+
+Why do People Do Code Review
+============================
+
+
+* Fewer defects
+* Developers share knowledge, responsibility
+* Limits the impact of a 'Brent'
+* Brings up the other developers
+* Creates Audit trail
+* Encourages 'tests always passing'
+
+
+.. note::
+    * encourages in two ways: 
+      1) the test passing is looked at, no more push-thrashing
+      2) no one wants to waste other peolpes time, they feel bad
+    * the logo for DoD boston is throwing away ego, blame, and slios
+    * silos because people can see changes other teams are doing in code review and git history, and positively push or nack those changes
+    * blame because whatever was done was done by 2 or 3 team members, no one solo action can cause an outage
+    * ego because people will find bugs in your code and point it out, and it very quickly becomes a non issue to take and get that kind of feedback
+
+
+.. note::
+    this is where, if I had my shit together, we would talk about acadmeic research into code review
+
+SuperBugs
+=========
+
+.. figure:: _static/superbugs.png
+   :align: center
+
+
+.. note::
+    Do i need to be fancy with this?
 
 
 
@@ -205,57 +240,6 @@ Questions to ask:
 * Is this patch too big?
 
 
-The Game
-========
-
-
-* Small patches land, big patches don't
-* People beg for reviews
-* People will make a plan, write it and land it quickly
-* People will learn who the soft touches are, and hassle them
-* Lots of time spent reviewing = less patches
-* Sprinting + Review workflow = hard
-* Chat + Review = odd
-
-.. note:: 
-
-    If the only way to get code into the repository is to get it approved by other people, certain things emerge from that, which then influence behavior.
-
-
-Why do People Do Code Review
-============================
-
-
-* Fewer defects
-* Developers share knowlege, responsibility
-* Limits the impact of a 'Brent'
-* Brings up the other developers
-* Creates Audit trail
-* Encourages 'tests always passing'
-
-
-.. note::
-    * encourages in two ways: 
-      1) the test passing is looked at, no more push-thrashing
-      2) no one wants to waste other peolpes time, they feel bad
-    * the logo for DoD boston is throwing away ego, blame, and slios
-    * silos because people can see changes other teams are doing in code review and git history, and positively push or nack those changes
-    * blame because whatever was done was done by 2 or 3 team members, no one solo action can cause an outage
-    * ego because people will find bugs in your code and point it out, and it very quickly becomes a non issue to take and get that kind of feedback
-
-
-.. note::
-    this is where, if I had my shit together, we would talk about acadmeic research into code review
-
-SuperBugs
-=========
-
-.. figure:: _static/superbugs.png
-   :align: center
-
-
-.. note::
-    Do i need to be fancy with this?
 
 
 Infrastructure as Code
@@ -313,7 +297,7 @@ Things we use code review for
 
 .. rst-class:: build
 
-* Test definitons
+* Test definitions
 * Creating Git repositories
 * Registering irc channels
 * Mapping 'review created' events to irc channels
@@ -325,7 +309,7 @@ Things we use code review for
 
 .. rst-class:: build
 
-* Candidate positions for elected officials
+* Candidacy for elected positions
 * Mapping between repositories and jobs
 * Releases
 * Adding new dependencies
@@ -345,6 +329,23 @@ Things we use code review for
    colors of the rainbow
 
 
+The Game
+========
+
+
+* Small patches land, big patches don't
+* People beg for reviews
+* People will make a plan, write it and land it quickly
+* People will learn who the soft touches are, and hassle them
+* Lots of time spent reviewing = less patches
+* Sprinting + Review workflow = hard
+* Chat + Review = odd
+
+.. note:: 
+
+    If the only way to get code into the repository is to get it approved by other people, certain things emerge from that, which then influence behavior.
+
+
 Code Review for Operations
 ==========================
 
@@ -353,7 +354,7 @@ Code Review for Operations
 How does code review change when done to an IoC codebase?
 
 * Merge speed is an issue
-* Auditablity becomes huge
+* Audit ability becomes huge
 * Access control moves from unix to your vcs
 * Testing will have less coverage
 * Small changes can have huge impact -> stressful
@@ -450,7 +451,7 @@ Silence Means No
 Forcing the Issue
 =================
 
-* Proposing an agressive change can force the issue
+* Proposing an aggressive change can force the issue
 
 .. note::
 
