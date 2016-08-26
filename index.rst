@@ -3,18 +3,21 @@
    hieroglyph-quickstart on Thu Aug 25 09:25:40 2016.
 
 
+==========================
 Code Review for Operations
 ==========================
 
 .. figure:: _static/devopsdays_boston_logo.png
    :align: left
-   :width: 300px
+   :width: 400px
 
 Spencer Krum, IBM
 
 August 26th, 2016
 
 @nibalizer
+
+http://bit.ly/2bl307e
 
 .. note::
 
@@ -30,8 +33,11 @@ Portland
 .. figure:: _static/Portland_and_Mt_Hood.jpg
    :align: center
 
+CC BY-SA https://upload.wikimedia.org/wikipedia/commons/f/fa/Portland_and_Mt_Hood.jpg
 
-.. CC BY-SA https://upload.wikimedia.org/wikipedia/commons/f/fa/Portland_and_Mt_Hood.jpg
+.. note::
+
+    CC BY-SA https://upload.wikimedia.org/wikipedia/commons/f/fa/Portland_and_Mt_Hood.jpg
 
 
 Real Portland
@@ -40,8 +46,11 @@ Real Portland
 .. figure:: _static/afterthebigone.gif
    :align: center
 
+Credit: Motherboard/Vice
 
-.. Fair Use Motherboard/Vice
+.. note::
+
+    Fair Use Motherboard/Vice
 
 
 Things I am Involved In
@@ -52,20 +61,6 @@ Things I am Involved In
 * SeaGL
 * Open Infrastructure Day @ SCaLE
 * VoxPupuli
-
-Me
-==
-
-* Portland State University
-* Large Trucking Company
-* OpenStack Infrastructure Project
-* Very Large Company That Used To Do Printers Then Split In Two
-* IBM
-
-
-.. note::
-
-   I've done some kind of code review at every place I've ever worked
 
 
 OpenStack Code Fast Facts
@@ -97,34 +92,12 @@ Code Review
 .. code-block:: shell
 
 
-   Code review is systematic examination (sometimes referred to as peer
-   review) of computer source code. It is intended to find mistakes
-   overlooked in the initial development phase, improving the overall
-   quality of software. Reviews are done in various forms such as pair
-   programming, informal walkthroughs, and formal inspections.
-
-
-From wikipedia
-
-
-.. note::
-
-   * In researching this, I found out a lot of people are doing post-merge big ol read all the code things
-   * focus on code review before merge
-
-
-Code Review
-===========
-
-
-.. code-block:: shell
-
-
    Developing software by proposing changes, then seeking peer review
    and approval of those changes.
 
 .. note::
 
+   * In researching this, I found out a lot of people are doing post-merge big ol read all the code things
    * focus on code review before merge
 
 
@@ -139,24 +112,7 @@ Code Review
 .. note::
 
    * sans robots
-
-
-Code Review
-===========
-
-0) Code is tested before review
-
-1) Review happens pre merge
-
-2) Approver isn't the author
-
-3) Code is re-tested after approval
-
-4) Code is deployed by a robot
-
-.. note::
-
-   * avec robots
+   * add in robots to test and deploy
 
 
 
@@ -288,7 +244,8 @@ Why do People Do Code Review
     * ego because people will find bugs in your code and point it out, and it very quickly becomes a non issue to take and get that kind of feedback
 
 
-.. this is where, if I had my shit together, we would talk about acadmeic research into code review
+.. note::
+    this is where, if I had my shit together, we would talk about acadmeic research into code review
 
 SuperBugs
 =========
@@ -297,32 +254,9 @@ SuperBugs
    :align: center
 
 
-.. Do i need to be fancy with this?
+.. note::
+    Do i need to be fancy with this?
 
-
-Infrastructure as Code
-======================
-
-
-.. code-block:: shell
-
-    Infrastructure as Code is the process of managing and provisioning
-    computing infrastructure (processes, bare-metal servers, virtual
-    servers, etc.) and their configuration through machine-processable
-    definition files, rather than physical hardware configuration or the
-    use of interactive configuration tools. The definition files may be
-    in a version control system.
-
-Wikipedia
-
-
-Infrastructure as Code
-======================
-
-
-.. code-block:: shell
-
-    Use the git, luke
 
 Infrastructure as Code
 ======================
@@ -438,19 +372,6 @@ How does code review change when done to an IoC codebase?
 
     What are some of the emergent behaviors?
 
-The Game
-========
-
-* Reviews in OpenStack are tracked by robots
-
-
-.. note::
-
-   Your # of reviews, % of -1 to +2 score, those things are metrics attached to your name. Some people and orgs care about these numbers more than others.
-
-   If you have only positive votes, it looks like you don't really review code that closely and are just rubber stamping not reviewing.
-
-   This creates a secondary effect where people look for any old thing to -1 with, which creates frustration in people trying to just get shit fixed
 
 The Game
 ========
